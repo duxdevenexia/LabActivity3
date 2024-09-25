@@ -8,6 +8,7 @@ import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
+    // for it
     // Declare view properties - the first one is done for you
     lateinit var displayTextView: TextView
     // other two view properties
