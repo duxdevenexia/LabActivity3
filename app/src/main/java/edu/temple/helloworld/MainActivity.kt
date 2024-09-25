@@ -9,9 +9,9 @@ import android.widget.TextView
 class MainActivity : AppCompatActivity() {
 
     // Declare view properties - the first one is done for you
-    lateinit var displayTextView: TextView
+    private lateinit var displayTextView: TextView
     // other two view properties
-    lateinit var nameEditText: EditText
+    private lateinit var nameEditText: EditText
     lateinit var clickMeButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,6 +28,11 @@ class MainActivity : AppCompatActivity() {
         
         findViewById<Button>(R.id.clickMeButton).setOnClickListener {
             displayTextView.text = "Hello, ${findViewById<EditText>(R.id.nameEditText).text}"
+            // add a if statement for it
+            if (nameEditText.text.isEmpty()) {
+                nameEditText.hint = "Enter Your Name Here"
+                displayTextView.text = "Please Enter Your Name Below"
+            }
         }
 
 
